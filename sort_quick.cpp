@@ -6,16 +6,29 @@ int partition(int arr[], int low, int high)
 {
 	
 	int pivot = arr[high];
-	int i = (low - 1);
-
-	for (int j = low; j <= high - 1; j++) {
-		if (arr[j] < pivot) {
-			i++;
-			swap(arr[i], arr[j]);
-		}
+	int count = 0;
+	for(int i=0; i<=high; i++){
+	    if(arr[i]<pivot){
+	        count++;
+	    }
 	}
-	swap(arr[i + 1], arr[high]);
-	return (i + 1);
+	int pivotindex = + count;
+	swap(arr[pivotindex], arr[high]);
+	int i=low,j=high;
+	while(i<pivotindex&&j>pivotindex){
+        while(arr[i]<pivot){
+            i++;
+        }
+        while(arr[j]>pivot){
+            j--;
+        }
+        if(i<pivotindex&&j>pivotindex){
+            swap(arr[i], arr[j]);
+            i++;
+            j--;
+        }
+	}
+	return pivotindex;
 }
 
 
