@@ -21,6 +21,6 @@ int r = binarySearch(arr, n, 4);
 if(r!=-1){
     cout<<"Index of 4 is "<<r<<endl;
 }else{
-    cout<<"4 isnot present";
+    cout<<"4 is not present";
 }
 }
